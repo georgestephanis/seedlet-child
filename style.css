@@ -22,7 +22,11 @@ Text Domain: tspa
 	--global--color-secondary-hover: #4C4C4C;
 	--global--color-tertiary: #FAFBF6;
 	--primary-nav--color-text: var(--global--color-background);
-	--footer--color-text: var(--global--color-background);
+	--primary-nav--color-link: var(--global--color-background);
+	--primary-nav--color-link-hover: var(--global--color-secondary);
+	--footer--color-text: var(--primary-nav--color-text);
+	--footer--color-link: var(--primary-nav--color-link);
+	--footer--color-link-hover: var(--primary-nav--color-link-hover);
 }
 
 #masthead,
@@ -46,8 +50,17 @@ Text Domain: tspa
 }
 
 #masthead .primary-navigation,
-#colophon .primary-navigation {
+#masthead .woo-navigation,
+#colophon .primary-navigation,
+#colophon .woo-navigation {
 	grid-area: menus;
+}
+
+#masthead .primary-navigation .sub-menu,
+#masthead .woo-navigation .sub-menu,
+#colophon .primary-navigation .sub-menu,
+#colophon .woo-navigation .sub-menu {
+	background-color: var(--global--color-foreground-low-contrast);
 }
 
 @media only screen and (max-width: 1280px) {

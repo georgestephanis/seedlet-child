@@ -14,7 +14,7 @@ Text Domain: tspa
 */
 
 :root {
-//  Do not change these values unless updating everywhere, they are hardcoded in functions.php.
+	// Do not change these values unless updating everywhere, they are hardcoded in functions.php.
 	--global--color-background: #FFFFFF;
 	--global--color-foreground: #333333;
 	--global--color-foreground-low-contrast: #4C4C4C;
@@ -24,8 +24,13 @@ Text Domain: tspa
 	--global--color-secondary-hover: #4C4C4C;
 	--global--color-tertiary: #FAFBF6;
 
+	// Change these as you like!
 	--primary-nav--color-text: var(--global--color-background);
-	--footer--color-text: var(--global--color-background);
+	--primary-nav--color-link: var(--global--color-background);
+	--primary-nav--color-link-hover: var(--global--color-secondary);
+	--footer--color-text: var(--primary-nav--color-text);
+	--footer--color-link: var(--primary-nav--color-link);
+	--footer--color-link-hover: var(--primary-nav--color-link-hover);
 }
 
 
@@ -50,8 +55,13 @@ Text Domain: tspa
 		}
 	}
 
-	.primary-navigation {
+	.primary-navigation,
+	.woo-navigation {
 		grid-area: menus;
+
+		.sub-menu {
+			background-color: var(--global--color-foreground-low-contrast);
+		}
 	}
 
 
