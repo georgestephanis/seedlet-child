@@ -29,3 +29,9 @@ add_filter( 'theme_mod_seedlet_--global--color-secondary',  function() { return 
 add_filter( 'theme_mod_seedlet_--global--color-tertiary',   function() { return '#FAFBF6'; } );
 add_filter( 'theme_mod_seedlet_--global--color-foreground', function() { return '#333333'; } );
 add_filter( 'theme_mod_seedlet_--global--color-background', function() { return '#FFFFFF'; } );
+
+// Add this to a later action as the child theme's functions.php loads before the parent theme.
+// Or we could `unregister_sidebar( 'sidebar-1' )` on `wp_loaded`
+add_action( 'after_setup_theme', function() {
+	remove_action( 'widgets_init', 'seedlet_widgets_init' );
+});

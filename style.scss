@@ -23,4 +23,66 @@ Text Domain: tspa
 	--global--color-secondary: #3C8067;
 	--global--color-secondary-hover: #4C4C4C;
 	--global--color-tertiary: #FAFBF6;
+
+	--primary-nav--color-text: var(--global--color-background);
+	--footer--color-text: var(--global--color-background);
+}
+
+
+#masthead,
+#colophon {
+	// Dummy colors for the moment -- just to flip from the standard so we can tell headers and footers apart.
+	background-color: var(--global--color-foreground);
+	color: var(--global--color-background);
+
+	display: grid;
+	grid-template-columns: 1fr 360px 900px 1fr;
+	grid-template-areas:
+		" . logo menus . "
+		" . row2 row2 . ";
+	justify-items: start;
+
+	.site-branding {
+		grid-area: logo;
+
+		.site-title a {
+			text-shadow: none;
+		}
+	}
+
+	.primary-navigation {
+		grid-area: menus;
+	}
+
+
+	// At this width we just make widths flex.
+	@media only screen and (max-width: 1280px) {
+		grid-template-columns: 10px 360px 1fr 10px;
+	}
+
+	// At this breakpoint we center the header/footer and stack stuff instead.
+	// 👉🏼 This is just the width that happens to match menu contents. Adjust as needed!
+	@media only screen and (max-width: 800px) {
+		grid-template-columns: 10px 1fr 10px;
+		grid-template-areas:
+		" . logo  . "
+		" . menus . "
+		" . row2  . ";
+	}
+
+	@at-root #masthead {
+		// Masthead specific stuff!
+	}
+
+	@at-root #colophon {
+		// Colophon specific stuff!
+		max-width: 100%;
+
+		.site-info {
+			grid-area: row2;
+			width: 100%;
+			text-align: center;
+			margin-bottom: 1em;
+		}
+	}
 }

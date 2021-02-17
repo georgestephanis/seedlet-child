@@ -21,6 +21,59 @@ Text Domain: tspa
 	--global--color-secondary: #3C8067;
 	--global--color-secondary-hover: #4C4C4C;
 	--global--color-tertiary: #FAFBF6;
+	--primary-nav--color-text: var(--global--color-background);
+	--footer--color-text: var(--global--color-background);
+}
+
+#masthead,
+#colophon {
+	background-color: var(--global--color-foreground);
+	color: var(--global--color-background);
+	display: grid;
+	grid-template-columns: 1fr 360px 900px 1fr;
+	grid-template-areas: " . logo menus . " " . row2 row2 . ";
+	justify-items: start;
+}
+
+#masthead .site-branding,
+#colophon .site-branding {
+	grid-area: logo;
+}
+
+#masthead .site-branding .site-title a,
+#colophon .site-branding .site-title a {
+	text-shadow: none;
+}
+
+#masthead .primary-navigation,
+#colophon .primary-navigation {
+	grid-area: menus;
+}
+
+@media only screen and (max-width: 1280px) {
+	#masthead,
+	#colophon {
+		grid-template-columns: 10px 360px 1fr 10px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	#masthead,
+	#colophon {
+		grid-template-columns: 10px 1fr 10px;
+		grid-template-areas: " . logo  . " " . menus . " " . row2  . ";
+	}
+}
+
+#colophon {
+	max-width: 100%;
+}
+
+#colophon .site-info {
+	grid-area: row2;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */
