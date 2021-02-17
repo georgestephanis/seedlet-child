@@ -1,0 +1,13 @@
+{
+  "name": "seedlet-child",
+  "version": "1.0.0",
+  "description": "Seedlet Child with Horizontal Headers and Footers",
+  "author": "automattic",
+  "license": "GPL-2.0+",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "scripts": {
+    "build": "node-sass style.scss style.css --output-style expanded --indent-type tab --indent-width 1 --source-map true"
+  }
+}

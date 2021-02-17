@@ -1,0 +1,26 @@
+/*
+Theme Name: Seedlet Child
+Theme URI: https://example.com
+Author: WordPress.com Special Projects
+Author URI: https://wpspecialprojects.wordpress.com/
+Description: Child theme for Seedlet
+Requires at least: 5.6
+Tested up to: 5.6
+Requires PHP: 5.6
+Version: 1.0.0
+License: GNU General Public License v2 or later
+Template: seedlet
+Text Domain: tspa
+*/
+:root {
+	--global--color-background: #FFFFFF;
+	--global--color-foreground: #333333;
+	--global--color-foreground-low-contrast: #4C4C4C;
+	--global--color-primary: #000000;
+	--global--color-primary-hover: #4C4C4C;
+	--global--color-secondary: #3C8067;
+	--global--color-secondary-hover: #4C4C4C;
+	--global--color-tertiary: #FAFBF6;
+}
+
+/*# sourceMappingURL=style.css.map */
